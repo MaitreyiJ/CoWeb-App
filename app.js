@@ -1,6 +1,5 @@
 var express=require('express');
 var app=express();
-const axios=require('axios');
 var bodyParser = require('body-parser');
 var methodOverride=require('method-override');
 const mongoose=require("mongoose");
