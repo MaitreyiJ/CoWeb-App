@@ -1,0 +1,16 @@
+<%- include("header.ejs") %>
+
+<div class="container">
+		<div class="alert alert-danger" role="alert">
+		 <%=message%>
+	</div>
+	</div>
+Sign up
+	
+<form action="/register" method="post">
+	<input type="text" name="username" placeholder="username">
+	<input type="password" name="password" placeholder="password">
+	<input type="text" name="location" placeholder="Hospital name, state">
+	<button>Sign up</button>
+	</form>
+<%- include("footer.ejs") %>

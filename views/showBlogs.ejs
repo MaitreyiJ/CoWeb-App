@@ -1,0 +1,101 @@
+<%- include("header.ejs") %>
+
+<ul class="media-list">
+  <div class="container" div style="padding-top:2em">
+ 
+  <li class="media">
+    <div class="media-left">
+      
+		  
+        <img class="media-object" src="<%=blog.postImage%>" >
+      
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= blog.postTitle%></h4>
+	 <h5 class="media-heading" id="color">
+		  <%= blog.author.username %>
+
+		  <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
+          
+		<%= blog.postTo %>
+		 
+	</h5>
+      <p><%=blog.postBody%></p>
+      <p><%=blog.postCreated.toDateString()%></p>
+		 
+		
+    </div>
+  </li>
+	</div>
+</ul>
+
+
+
+<div class="container">
+		<div class="row">
+			
+			<div style="width:30%; margin: 25px auto;">
+				<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+					
+					<div class="form-group">
+						<button class="btn btn-primary btn-danger btn-block">Delete!</button>
+					</div>	
+					
+				
+		</form>
+			</div>
+
+			<div class="container">
+		<div class="row">
+			
+			<div style="width:30%; margin: 25px auto;">
+				<form action="/blogs/<%=blog._id%>/edit " method="GET">
+					
+					<div class="form-group">
+						<button class="btn btn-primary btn-warning btn-block">Edit!</button>
+					</div>	
+					
+				
+		</form>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+

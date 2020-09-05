@@ -1,0 +1,33 @@
+<%- include("header.ejs") %>
+
+    
+<div class="container">
+	<header class="jumbotron">
+	<div class="container">
+		<h1>Welcome to your contacts!</h1>
+	    <p>Check on your connections, to see how they are doing today or click the link below to add a contact to your list    </p>
+	    <p><a href="/KeepCalm&Connect/newConnections">Keep Calm and      Connect</a></p>
+	</div>
+</header>
+  <div class="row text-center">
+	<% userData.forEach(function(user){%>
+    <% if (user!=currentUser){%>
+    <div class="col-md-3 col-sm-6">
+	     <div class="thumbnail">
+			<img src ="<%=user.image%>">
+			 <div class="caption">
+			 <h4><%= user.name %></h4>
+		</div>
+			 <p>
+				 <a href="/KeepCalm&Connect/<%=user._id%>" class="btn btn-primary">More Info</a>
+			 </p>
+		</div>
+		 
+    </div>
+
+<%}%>
+<%});%>
+	</div>
+	
+</div>
+<%- include("footer.ejs") %>

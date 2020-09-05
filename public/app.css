@@ -1,0 +1,21 @@
+body{
+	font-family: 'Gochi Hand', cursive;
+	
+}
+.thumbnail img{
+	width:100%;
+}
+.thumbnail{
+	padding:0;
+}
+.thumbnail .caption-full{
+	padding:9px;
+	
+}
+#color{
+	color:green;
+}
+#deleteform{
+	display:inline;
+	width:auto;
+}

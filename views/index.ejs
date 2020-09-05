@@ -1,0 +1,50 @@
+<%- include("header.ejs") %>
+
+
+ <!-- Need to display from and To     -->
+<div class="container" >
+	<header class="jumbotron">
+	<div class="container">
+		<h1>Welcome to your posts!</h1>
+	    <p>Send new posts to your contacts !</p>
+	    <p><a href="/KeepCalm&Connect/newConnections">Keep Calm and      Connect</a></p>
+	</div>
+</header>
+ <ul class="media-list">
+	 <% posts.forEach(function(post){%>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+	
+        <img class="media-object" src="<%=post.postImage%>" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading" ><%= post.postTitle%>
+		<p id="color">
+			
+		   <%=post.author.username %>
+
+		  <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
+          
+		<%= post.postTo %>
+		  </p>
+		</h4>
+      <p><%=post.postBody.substring(0,100)%></p>
+      <p><%=post.postCreated%></p>
+		 <a href="/blogs/<%=post._id%>" class="btn btn-primary">More Info</a>
+		<%});%>
+    </div>
+  </li>
+</ul>
+<%- include("footer.ejs") %>
+
+
+
+
+
+
+
+
+
+

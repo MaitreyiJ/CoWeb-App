@@ -1,0 +1,35 @@
+<%- include("header.ejs") %>
+
+    
+<div class="container">
+	<header class="jumbotron">
+	<div class="container">
+		<h1>These are the contacts nearby!</h1>
+	    <p>We are all together in this! click the link below to add a contact to your list    </p>
+	    <p><a href="/KeepCalm&Connect/newConnections">Keep Calm and      Connect</a></p>
+	</div>
+</header>
+  <div class="row text-center">
+	<% usersFound.forEach(function(user){%>
+    <% if (user.username!=currentUser){%>
+    <div class="col-md-3 col-sm-6">
+	     <div class="thumbnail">
+			<h4><%= user.location %></h4>
+
+			<!-- <img src ="<%=user.image%>"> -->
+			 <div class="caption">
+			 <h4><%= user.username %></h4>
+		</div>
+			 <!-- <p>
+				 <a href="/KeepCalm&Connect/<%=user._id%>" class="btn btn-primary">More Info</a>
+			 </p> -->
+		</div>
+		 
+    </div>
+
+<%}%>
+<%});%>
+	</div>
+	
+</div>
+<%- include("footer.ejs") %>

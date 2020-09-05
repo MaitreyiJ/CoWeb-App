@@ -1,0 +1,13 @@
+<h1>
+	The Results Page
+</h1>
+<ul>
+	
+<% data.forEach(function(clinic){%>
+<li><%=clinic['name']%></li>
+<li><%=clinic['description']%></li>
+<li><%=clinic['physical_address'][0]['address_1']%></li>
+<li><%=clinic['phones'][0]['number']%></li>
+
+<%})%>
+</ul>

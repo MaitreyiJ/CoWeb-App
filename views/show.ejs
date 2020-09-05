@@ -1,0 +1,85 @@
+    <%- include("header.ejs") %>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<p class="lead">
+					My Wellness Kit
+				</p>
+				<div class="list-group">
+					<li class="list-group-item active"> My contacts</li>
+					<li class="list-group-item"> Motivations Diary</li>
+					<li class="list-group-item"> My Posts</li>
+                </div>
+			</div>
+			<div class="col-md-9">
+				<div class="thumbnail" >
+					  <img class="img-responsive"src ="<%=contact.image%>">
+				<div class="caption-full" id="special">
+					<h4 class="pull-right"><%= contact.hospitalLocation %>
+                    <%= contact.state %>
+
+					</h4>
+					<h4><a><%= contact.name %></a></h4>
+					</div>
+              </div>
+				<div class="well">
+					<div class="text-right">
+						<% if (contact.author.username==user){%>
+						<a class="btn btn-success" href="/blogs/<%=contact.name%>/new">Post a message!</a>
+				<%} else{%>
+<a class="btn btn-info" href="/KeepCalm&Connect/newConnections">Add <%=contact.name%> to contacts!</a>						
+						<%}%>
+					
+					<form  id ="deleteform" action="/KeepCalm&Connect/<%=contact._id%>?_method=DELETE" method="POST">
+					
+						<button class="btn btn-danger" id="deleteform">Delete contact!</button>
+					
+				
+		</form>
+					</div>
+					
+						<!-- We need to loop through all the posts of this user  -->
+<hr>
+<% contact.posts.forEach(function(post){%>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<ul class="media-list">
+				<span class="pull-right">
+						<%= post.postCreated%>
+					</span>
+				
+  				<div class="container" div style="padding-top:2em">
+ 					<li class="media">
+					
+    				<div class="media-left">
+      			<img class="media-object" src="<%=post.postImage%>" >
+     				</div>
+    				<div class="media-body">
+						<h4 class="media-heading"><strong><%= post.postTitle%></strong></h4>
+						<p><strong><%=post.author.username%></strong></p>
+      				<p><%=post.postBody%></p>
+					
+					</div>
+  					</li>
+				</div>
+			</ul>
+		</div>
+	</div>
+
+<%})%>
+			</div>
+				</div>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include("footer.ejs") %>

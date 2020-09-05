@@ -1,0 +1,38 @@
+
+<%- include("header.ejs") %>
+
+	<div class="container">
+		<div class="row">
+			<h1 style="text-align:center">Create a new contact</h1>
+			<div style="width:30%; margin: 25px auto;">
+				<form action="/KeepCalm&Connect" method="POST">
+					<div class="form-group">
+						<input  class="form-control" type="text" placeholder="Name" name="name">
+					</div>
+				    <div class="form-group">
+						<input  class="form-control" type="text" placeholder="Image URL" name="image">
+					</div>
+					<div class="form-group">
+						<input  class="form-control" type="text" placeholder="Hospital Name and Location" name="hospital">
+					</div>
+					<div class="form-group">
+						<input  class="form-control" type="text" placeholder="userID" name="userID">
+					</div>
+					<div class="form-group">
+						<input  class="form-control" type="text" placeholder="state" name="state">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary btn-info btn-block">Submit!</button>
+					</div>	
+					
+				
+		</form>
+			<a href="/KeepCalm&Connect">Go back</a>
+
+			</div>
+		
+			
+		</div>
+		
+	</div>
+<%- include("footer.ejs") %>

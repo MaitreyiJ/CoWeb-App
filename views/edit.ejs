@@ -1,0 +1,55 @@
+
+
+<%- include("header.ejs") %>
+
+<div class="jumbotron" div style="margin-top:-20px;">
+  <h1 style="text-align:center">Edit your  blog post to send to your contacts!</h1>
+  
+</div>
+	<div class="container">
+		<div class="row">
+			<h1 style="text-align:center">Edit  <%=blog.postTitle%> </h1>
+			<div style="width:30%; margin: 25px auto;">
+				<form action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
+					<div class="form-group ">
+						<input  class="form-control" type="text" value="<%=blog.postTo%>" name="To">
+					</div>
+					<div class="form-group">
+						<input  class="form-control" type="text" value="<%=blog.postTitle%>" name="Title">
+					</div>
+				    <div class="form-group">
+						<input  class="form-control" type="text" value="<%=blog.postImage%>" name="image">
+					</div>
+					<div class="form-group form-group-lg">
+						<textarea class="form-control" rows="3" name="Body"> <%=blog.postBody%></textarea>
+                    </div>
+					
+					<div class="form-group">
+						<button class="btn btn-primary btn-info btn-block">Submit!</button>
+					</div>	
+					
+				
+		</form>
+			<a href="/blogs">Go back</a>
+
+			</div>
+		
+			
+		</div>
+		
+	</div>
+<%- include("footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
