@@ -24,6 +24,15 @@ var blogsRoutes=require("./routes/blogs");
 var contactsRoutes=require("./routes/contacts");
 
 //Connecting our users (logged in/registered) with their blog posts
+mongoose.connect('mongodb+srv://Maitreyi:M@itreyi2018@cluster0.ph1sp.mongodb.net/<dbname>?retryWrites=true&w=majority',{
+	useNewUrlParser:true,
+	useCreateIndex:true
+}).then(function(req,res){
+	console.log("Mongo DB connected");
+}).catch(function(err){
+	console.log("ERROR",err.message);
+});
+
 
 
 app.use(function(req,res,next){
