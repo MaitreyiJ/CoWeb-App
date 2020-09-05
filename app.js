@@ -118,33 +118,7 @@ app.get("/",function(req,res){
 //4.How are you feeling today section ...
 //5.Mental wellness suggestions for Covid-19 patients.
 //Connect it to our list of web pages 
-app.get("/search",function(req,res){
-	res.render("search.ejs");
-});
 
-
-app.get("/testingLocations",function(req,res){
-// Make a request for a user with a given state name
-var stateName=req.query.state;
-var query="https://covid-19-testing.github.io/locations/" +stateName +"/complete.json";	
-	
-axios.get(query)
-  .then(function (response) {
-    // handle success
-	
-	var data=response['data'];
-	res.render("testingloc.ejs",{data:data});
-	
-    
- })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
-});
 
 
 
